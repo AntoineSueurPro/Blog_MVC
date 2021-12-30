@@ -1,0 +1,248 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+a:hover {
+    color: #003459
+}
+
+label, input {
+    display: inline-block;
+}
+ input {
+     margin-bottom: 10px;
+ }
+.gros_h2 {
+    font-size: 34px;
+}
+
+.hero {
+    height: 55vh;
+    border-radius: 15px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.hero-text {
+    background-color: rgba(0, 52, 89, 0.7);
+    height: 21vh;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.hero-text-content {
+    width: 30%;
+}
+
+.hero-p {
+    font-size: 16px;
+}
+
+.hero-date {
+    font-size: 10px;
+    margin-bottom: -1px;
+}
+
+
+.item-categorie {
+    background-color: white;
+    color: #003459;
+    border: 1px solid #003459;
+    border-radius: 10px;
+    width: 10%;
+    text-align: center;
+    padding: 5px;
+}
+
+.selected {
+    background-color: #003459;
+    color: white;
+}
+
+.item-categorie:hover {
+    background-color: #003459;
+    color: white;
+    transition-duration: 0.3s ;
+    cursor: pointer !important;
+}
+
+.item-article {
+    width: 20rem;
+    margin-bottom: 50px;
+}
+
+.test {
+    height: 50vh;
+}
+
+#goUp {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: rgba(56,55,55,0.6);
+    height: 40px;
+    width: 50px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    border-radius: 5%;
+    display: none;
+}
+
+#suppr {
+    cursor: pointer !important;
+}
+
+.form {
+    height: 85vh;
+}
+
+.largeurPerso {
+    width: 28%;
+}
+
+.largeur90 {
+    width: 90%;
+}
+
+.image_article{
+    height: 50vh;
+}
+
+
+
+.test_contenu p {
+    font-size: 20px;
+}
+/*==============================================================
+|              CLASSE UTILITAIRES                              |
+==============================================================*/
+
+.bouton {
+    background-color: #003459;
+    color: white;
+    border: none;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 6px;
+}
+
+.bouton:hover {
+    color: white;
+    background-color: #00243d;
+    transition-duration: 0.3s ;
+}
+
+.bouton-suppr {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 6px;
+}
+
+.bouton-suppr:hover {
+    background-color: #BB0404;
+    color: white;
+    transition-duration: 0.3s ;
+}
+
+.container-perso {
+    width: 80%;
+    margin: auto;
+}
+
+.text-myBlack {
+    color: #3a3a3a;
+}
+
+.blue {
+    color: #00243d !important;
+}
+
+.round {
+    border-radius: 15px;
+}
+
+.titre-md {
+    font-size: 25px;
+}
+
+.titre-xl {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.p-xs {
+    font-size: 10px !important;
+}
+
+.error-message {
+    font-size: 14px;
+}
+
+.marge-reset {
+    margin-bottom: -3px;
+}
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.avatar_article {
+    height: 100px;
+    width: 100px;
+}
+
+.test-bottom {
+    margin-bottom: -28px;
+}
+
+.test-top {
+    margin-top: -28px;
+}
+
+.largeur10 {
+    width: 10%;
+}
+
+.largeur70 {
+    width: 56.5%;
+}
+
+@media (max-width: 905px){
+    .table thead {
+        display: none;
+    }
+    .table tr{
+        display: block;
+        margin-bottom: 40px;
+    }
+    .table td {
+        display: block;
+
+    }
+    .table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+
+    .table {
+        width: 100%;
+    }
+}
