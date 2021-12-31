@@ -3,7 +3,7 @@
 ob_start();
 
 ?>
-    <section class="form d-flex align-items-center">
+    <section class="form d-flex align-items-center mb-5">
         <div class="shadow-lg round largeurPerso m-auto pt-4 pe-5 ps-5 pb-4">
             <h1 class="text-myBlack text-center mb-5">Modifier son mot de passe</h1>
             <form action="" method="POST" class="d-flex flex-column">

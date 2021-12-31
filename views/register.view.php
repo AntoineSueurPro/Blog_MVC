@@ -19,7 +19,7 @@ ob_start();
                 <input type="password" name="password_confirm" id="password_confirm" required>
                 <?= isset($_SESSION['error']['confirm']) ? '<p class="text-danger text-center error-message">' . $_SESSION['error']['confirm'] . '</p>' : '' ?>
                 <p class="text-danger p-xs">* Obligatoire</p>
-                <input type="submit" value="S'inscrire" class="bouton w-75 m-auto mt-4">
+                <input type="submit" value="S'inscrire" class="bouton w-100 m-auto mt-4">
             </form>
         </div>
     </section>

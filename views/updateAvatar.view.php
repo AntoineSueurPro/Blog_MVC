@@ -14,7 +14,7 @@ ob_start();
             <div class="mb-2"><img class="w-100 round" alt="avatar" src="public/img/<?= $_SESSION['membre']['avatar'] ?>"></div>
             <form action="" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="MAX_SIZE_FILE" value="1000000">
-                <input type="file" name="avatar" required>
+                <input class="fichierAvatar" type="file" name="avatar" required>
                 <p class="text-center mt-5"><input type="submit" class="bouton w-75 d-inline-block" value="Modifier"></p>
                 <p class="text-myBlue text-center"><a href="index.php?route=profil">Retour</a></p>
             </form>

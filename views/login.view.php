@@ -3,7 +3,7 @@
 ob_start();
 ?>
     <section class="form d-flex align-items-center">
-        <div class="shadow-lg round w-25 m-auto pt-4 pe-5 ps-5 pb-4">
+        <div class="shadow-lg round largeurPerso m-auto pt-4 pe-5 ps-5 pb-4">
             <h1 class="text-myBlack text-center mb-4">Connexion</h1>
             <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
                 foreach ($_SESSION['error'] as $error) { ?>
@@ -16,7 +16,7 @@ ob_start();
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password" id="password" required>
                 <p class="text-center p-xs">Envie de nous rejoindre ? <a href="index.php?route=inscription" class="text-primary">Créer un compte</a></p>
-                <input type="submit" value="Se connecter" class="bouton w-75 m-auto mt-4">
+                <input type="submit" value="Se connecter" class="bouton w-100 m-auto mt-4">
             </form>
         </div>
     </section>

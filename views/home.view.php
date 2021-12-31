@@ -24,7 +24,7 @@ $created_at = implode("-", $created_at)
         </div>
     </div>
 
-    <div class="d-flex gap-3 mt-5 pt-5 pb-5 mb-5 w-75 justify-content-center m-auto">
+    <div class="d-flex div_categorie gap-3 mt-5 pt-5 pb-5 mb-5 w-75 justify-content-center m-auto">
         <div class="categorie selected item-categorie">Tout</div>
         <?php foreach ($categories as $categorie) { ?>
             <div class="categorie item-categorie"><?= $categorie['nom_categorie'] ?></div>
@@ -32,7 +32,7 @@ $created_at = implode("-", $created_at)
     </div>
 
 
-    <div id="content" class="d-flex flex-wrap justify-content-between"></div>
+    <div id="content" class="d-flex flex-wrap justify-content-lg-between justify-content-sm-center"></div>
 </section>
 <?php
 $content = ob_get_clean();
