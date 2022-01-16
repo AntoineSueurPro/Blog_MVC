@@ -108,5 +108,6 @@ ob_start();
 <?php
 unset($_SESSION['info']);
 $content = ob_get_clean();
+$title = 'Dahsboard';
 require('base.view.php');
 ?>

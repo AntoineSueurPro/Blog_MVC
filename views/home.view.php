@@ -36,5 +36,6 @@ $created_at = implode("-", $created_at)
 </section>
 <?php
 $content = ob_get_clean();
+$title = 'Accueil';
 require('base.view.php');
 ?>

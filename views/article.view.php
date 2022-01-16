@@ -92,5 +92,6 @@ $created_at = implode("-", $created_at)
 unset($_SESSION['error']['contenu']);
 unset($_SESSION['info']);
 $content = ob_get_clean();
+$title = $article['titre'];
 require('base.view.php');
 ?>

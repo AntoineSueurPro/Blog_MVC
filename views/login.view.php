@@ -23,5 +23,6 @@ ob_start();
 <?php
 unset($_SESSION['error']);
 $content = ob_get_clean();
+$title = 'Connexion';
 require('base.view.php');
 ?>

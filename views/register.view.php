@@ -27,5 +27,6 @@ ob_start();
 <?php
 unset($_SESSION['error']);
 $content = ob_get_clean();
+$title = 'Inscription';
 require('base.view.php');
 ?>

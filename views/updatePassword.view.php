@@ -25,5 +25,6 @@ ob_start();
 <?php
 unset($_SESSION['error']);
 $content = ob_get_clean();
+$title = 'Modifier son mot de passe';
 require('base.view.php');
 ?>

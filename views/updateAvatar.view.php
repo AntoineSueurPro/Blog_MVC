@@ -23,6 +23,7 @@ ob_start();
 <?php
 unset($_SESSION['error']);
 $content = ob_get_clean();
+$title = 'Modification de l\'avatar';
 require('base.view.php');
 ?>
 

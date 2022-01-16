@@ -17,7 +17,7 @@
         });
     </script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Mon blog | <?= $title ?></title>
 </head>
 <header class="d-flex container-perso justify-content-between p-3">
     <p class="fw-bold fs-5"><a href="index.php"> MonBlog</a></p>

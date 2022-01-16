@@ -30,5 +30,6 @@ if ($_SESSION['membre']['avatar'] === NULL) {
 <?php
 unset($_SESSION['info']);
 $content = ob_get_clean();
+$title = 'Profil | ' . $_SESSION['membre']['pseudo'];
 require('base.view.php');
 ?>

@@ -34,5 +34,6 @@ ob_start();
 unset($_SESSION['error']);
 unset($_SESSION['info']);
 $content = ob_get_clean();
+$title = 'Contact';
 require('base.view.php');
 ?>

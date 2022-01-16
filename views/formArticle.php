@@ -43,5 +43,6 @@ $isAdding = isset($article) ?? false;
 <?php
 unset($_SESSION['error']);
 $content = ob_get_clean();
+$title = $isEditing === true ? 'Modification d\'article' : 'Publication d\'article';
 require('base.view.php');
 ?>

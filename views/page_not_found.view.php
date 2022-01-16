@@ -9,5 +9,6 @@ ob_start();
 <?php
 
 $content = ob_get_clean();
+$title = 'Page non trouvée';
 require('base.view.php');
 ?>
