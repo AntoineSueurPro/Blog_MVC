@@ -141,6 +141,10 @@ p {
 .form {
     height: 85vh;
 }
+
+.contact {
+    height: 100vh;
+}
 .avatar_article {
     height: 100px;
     width: 100px;
