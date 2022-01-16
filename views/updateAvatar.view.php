@@ -2,7 +2,7 @@
 ob_start();
 
 ?>
-    <section class="form d-flex align-items-center">
+    <section class="form d-flex align-items-center container-mobile-2">
         <div class="shadow-lg round largeurPerso m-auto pt-4 pe-5 ps-5 pb-4">
             <h1 class="text-myBlack text-center mb-4">Modifier l'avatar</h1>
             <?php

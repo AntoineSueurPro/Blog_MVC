@@ -26,5 +26,4 @@ window.addEventListener("scroll", function() {
     }
 })
 
-let suppr = document.getElementById('suppr')
-suppr.addEventListener('click', supprimer)
+

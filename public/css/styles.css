@@ -21,14 +21,35 @@ label, input {
  input {
      margin-bottom: 10px;
  }
-.gros_h2 {
-    font-size: 34px;
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+ /*************************************************|
+ |         IMAGE PRINCIPALE - HOME - ARTICLE       |
+ |*************************************************/
+.menu-mobile {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    z-index: 10000;
+    padding-top: 10px;
+    box-shadow: 0 6px 9px -2px lightgray;
+}
+
+.menu-mobile ul {
+    margin-left: -10%;
 }
 
 .hero {
     height: 55vh;
     border-radius: 15px;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
 }
@@ -54,6 +75,9 @@ label, input {
     margin-bottom: -1px;
 }
 
+/*************************************************|
+|         BANDEAU DE CATEGORIES                   |
+|*************************************************/
 
 .item-categorie {
     background-color: white;
@@ -86,6 +110,16 @@ label, input {
     height: 50vh;
 }
 
+.div_categorie {
+
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+/*************************************************|
+|         FLECHE DE REMONTEE                      |
+|*************************************************/
+
 #goUp {
     position: fixed;
     bottom: 40px;
@@ -107,6 +141,36 @@ label, input {
 .form {
     height: 85vh;
 }
+.avatar_article {
+    height: 100px;
+    width: 100px;
+}
+
+.image_article{
+    height: 50vh;
+}
+
+.test_contenu p {
+    font-size: 20px;
+}
+
+.commenter {
+    width: 80%;
+}
+
+#open-menu {
+    display: none;
+}
+
+
+/*==============================================================
+|              CLASSE UTILITAIRES                              |
+==============================================================*/
+
+
+.gros_h2 {
+    font-size: 34px;
+}
 
 .largeurPerso {
     width: 28%;
@@ -115,19 +179,6 @@ label, input {
 .largeur90 {
     width: 90%;
 }
-
-.image_article{
-    height: 50vh;
-}
-
-
-
-.test_contenu p {
-    font-size: 20px;
-}
-/*==============================================================
-|              CLASSE UTILITAIRES                              |
-==============================================================*/
 
 .bouton {
     background-color: #003459;
@@ -198,23 +249,6 @@ label, input {
 .marge-reset {
     margin-bottom: -3px;
 }
-p {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.avatar_article {
-    height: 100px;
-    width: 100px;
-}
-
-.test-bottom {
-    margin-bottom: -28px;
-}
-
-.test-top {
-    margin-top: -28px;
-}
 
 .largeur10 {
     width: 10%;
@@ -223,6 +257,7 @@ p {
 .largeur70 {
     width: 56.5%;
 }
+
 
 @media (max-width: 905px){
     .table thead {
@@ -248,14 +283,56 @@ p {
 
 }
 
+/*************************************************|
+|                  RESPONSIVE                     |
+|*************************************************/
+
+
 @media only screen and (min-width: 0px) and (max-width: 650px){
+
+    header {
+        position: fixed;
+        top: 0%;
+        z-index: 10000;
+        background-color: white;
+        width: 100%;
+        border-bottom: 1px solid lightgray;
+    }
+
+    header.container-perso {
+        width: 100%;
+    }
+
+    .container-mobile {
+        margin-top: 100px;
+    }
+
+    .container-mobile-2 {
+        margin-top: 6rem !important;
+    }
+
+    p.categorie-article {
+        width: 100%;
+    }
+
+    .menu {
+       display: none;
+    }
+
+    #open-menu {
+        display: block;
+    }
+
     .item-categorie {
-      width: 100%
+      width: 40%;
+        font-size: 9px;
     }
 
     .div_categorie {
         flex-wrap: wrap;
         gap: unset;
+        padding-top: 15%;
+        padding-bottom: 15%;
     }
 
     .largeurPerso {
@@ -266,6 +343,69 @@ p {
         color: transparent;
     }
 
+    .test_contenu p {
+        font-size: 12px;
+    }
+
+    .commenter {
+        width: 100%;
+    }
+
+    .gros_h2 {
+        font-size: 20px;
+    }
+
+    .titre_categorie {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        height: 15vh;
+    }
+
+    .hero-text {
+        height: 10vh;
+    }
+
+    .hero .gros_h2 {
+        font-size: 15px;
+    }
+
+    .hero-text-content {
+        width: 100%;
+    }
+
+    .hero-p {
+        display: none;
+    }
+
+
+    .titre-xl {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .hero_image {
+        height: 20vh;
+    }
+
+    .avatar_article {
+        height: 50px;
+        width: 50px;
+    }
+
+    .commentaire {
+        font-size: 10px;
+    }
+
+    .suppr {
+        display: none;
+    }
+
+    .date_article {
+       font-size: 8px;
+    }
 }
 
 @media only screen and (min-width: 651px) and (max-width: 768px){
@@ -282,22 +422,41 @@ p {
     .largeurPerso {
         width: 70%;
     }
-
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px){
 
     .item-categorie {
-        width: 45%
+        width: 30%;
+        font-size: 13px;
     }
 
     .div_categorie {
         flex-wrap: wrap;
         gap: unset;
+        padding-bottom: 10%;
+        padding-top: 10%;
     }
 
     .largeurPerso {
         width: 70%;
+    }
+    .hero {
+        height: 20vh;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero-text {
+        height: 10vh;
+    }
+
+    .hero .gros_h2 {
+        font-size: 15px;
+    }
+
+    .hero-p {
+        display: none;
     }
 }
 
@@ -313,16 +472,5 @@ p {
     }
 
 
+
 }
-
-
-/*@media (max-width: 1700px){*/
-/*    .item-categorie {*/
-/*        width: 30%*/
-/*    }*/
-
-/*    .div_categorie {*/
-/*        flex-wrap: wrap;*/
-/*        gap: unset;*/
-/*    }*/
-/*}*/

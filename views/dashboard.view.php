@@ -3,7 +3,7 @@
 ob_start();
 
 ?>
-    <section class="round shadow-lg p-5">
+    <section class="round shadow-lg p-5 container-mobile">
         <h1 class="text-center mb-5">Dashboard</h1>
 
         <h2 class="mb-3">Articles</h2>

@@ -9,9 +9,9 @@ $created_at = explode("-", $article['created_at']);
 $created_at = array_reverse($created_at);
 $created_at = implode("-", $created_at)
 ?>
-<section class="round shadow-lg p-5">
-    <h1 class="titre-xl text-myBlack mb-5">Mon Blog</h1>
-    <div class="hero d-flex align-items-end" style="background-image: url('public/img/<?= $article['image']?>')">
+<section class="round shadow-lg p-5 container-mobile">
+    <h1 class="titre-xl mb-5 text-myBlack">Mon Blog</h1>
+    <div class="hero hero_image d-flex align-items-end" style="background-image: url('public/img/<?= $article['image']?>')">
         <div class="hero-text p-3">
             <div class="hero-text-content">
                 <p class="hero-date"><?= $created_at ?></p>
@@ -24,7 +24,7 @@ $created_at = implode("-", $created_at)
         </div>
     </div>
 
-    <div class="d-flex div_categorie gap-3 mt-5 pt-5 pb-5 mb-5 w-75 justify-content-center m-auto">
+    <div class="d-flex div_categorie gap-3 w-75 justify-content-center m-auto">
         <div class="categorie selected item-categorie">Tout</div>
         <?php foreach ($categories as $categorie) { ?>
             <div class="categorie item-categorie"><?= $categorie['nom_categorie'] ?></div>

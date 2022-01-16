@@ -13,6 +13,7 @@ class Router
     private $dashboardController;
     private $articleController;
     private $errorController;
+    private $contactController;
 
     public function __construct()
     {
@@ -23,6 +24,7 @@ class Router
         $this->dashboardController = new \controller\DashboardController;
         $this->articleController = new \controller\ArticleController;
         $this->errorController = new \controller\ErrorController;
+        $this->contactController = new \controller\ContactController;
 
     }
 
@@ -49,6 +51,10 @@ class Router
                     $this->articleController->index();
                 } elseif ($route === 'ajax') {
                     $this->homeController->ajax();
+                } elseif ($route === 'contact') {
+                    $this->contactController->index();
+                } elseif ($route === 'mentions') {
+                    $this->homeController->mentionLegale();
                 }
                 else {
                     $this->errorController->pageNotFound();

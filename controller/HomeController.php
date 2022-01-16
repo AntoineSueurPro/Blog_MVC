@@ -26,4 +26,8 @@ class HomeController {
             $this->artcilesManager->selectAllAjaxWithoutCategorie();
         }
     }
+
+    public function mentionLegale() {
+        require('views/mentions.view.php');
+    }
 }

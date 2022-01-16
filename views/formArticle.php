@@ -5,7 +5,7 @@ $isEditing = isset($article) ?? true;
 $isAdding = isset($article) ?? false;
 ?>
 
-    <section class="d-flex align-items-center">
+    <section class="d-flex align-items-center container-mobile-2">
         <div class="round shadow-lg p-5 m-auto w-100">
             <h1 class="text-myBlack text-center mb-4"><?= $isEditing === true ? 'Modification d\'article' : 'Publication d\'article' ?></h1>
             <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {

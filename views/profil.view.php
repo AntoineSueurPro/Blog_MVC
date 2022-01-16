@@ -6,7 +6,7 @@ if ($_SESSION['membre']['avatar'] === NULL) {
     $_SESSION['membre']['avatar'] = 'avatar.jpg';
 };
 ?>
-<section class="form d-flex align-items-center">
+<section class="form d-flex align-items-center container-mobile-2">
     <div class="shadow-lg round largeurPerso m-auto pt-4 pe-5 ps-5 pb-4">
         <h1 class="text-myBlack text-center mb-4">Profil</h1>
         <?php
@@ -25,6 +25,10 @@ if ($_SESSION['membre']['avatar'] === NULL) {
     <?php
  } ?>
 </section>
+<script>
+    let suppr = document.getElementById('suppr')
+    suppr.addEventListener('click', supprimer)
+</script>
 <?php
 unset($_SESSION['info']);
 $content = ob_get_clean();
