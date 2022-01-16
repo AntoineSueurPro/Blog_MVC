@@ -30,7 +30,7 @@ class ContactController {
                 $_SESSION['error']['message'] = "Le message ne doit pas être vide";
             }
 
-            if (!isset($erreur)) {
+            if ($error === 0) {
 
                 $mail = new PHPMailer(true);
 

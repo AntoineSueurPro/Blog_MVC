@@ -12,6 +12,7 @@ ob_start();
                 <?= isset($_SESSION['error']['pseudo']) ? '<p class="text-danger text-center error-message">' . $_SESSION['error']['pseudo'] . '</p>' : '' ?>
                 <label for="email">E-mail <span class="text-danger fw-bold">*</span></label>
                 <input type="email" name="email" id="email" required>
+                <?= isset($_SESSION['error']['email']) ? '<p class="text-danger text-center error-message">' . $_SESSION['error']['email'] . '</p>' : '' ?>
                 <label for="password">Mot de passe <span class="text-danger fw-bold">*</span></label>
                 <input type="password" name="password" id="password" required>
                 <?= isset($_SESSION['error']['password']) ? '<p class="text-danger text-center error-message">' . $_SESSION['error']['password'] . '</p>' : '' ?>

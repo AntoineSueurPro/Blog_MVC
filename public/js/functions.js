@@ -42,11 +42,16 @@ function noArticle() {
     content.innerHTML = '';
     container.innerHTML = '<p class="animate__animated animate__fadeIn m-auto test">Désolé, aucun article dans cette catégorie.</p>'
 }
+let goUp = document.getElementById("goUp");
+window.addEventListener("scroll", function() {
 
-function supprimer() {
-    let ask = window.confirm('Voulez-vous vraiment supprimer votre compte ? Cette action est irréversible.')
-    if(ask) {
-        window.alert('Compte supprimé')
-        window.location.href= 'index.php?route=profil&action=deleteAccount'
+    if(window.scrollY > 300) {
+        goUp.classList.remove('animate__fadeOut');
+        goUp.style.display = 'block';
+        goUp.classList.add("animate__animated");
+        goUp.classList.add("animate__fadeIn");
     }
-}
+    else {
+        goUp.classList.add('animate__fadeOut');
+    }
+})

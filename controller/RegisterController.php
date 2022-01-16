@@ -29,6 +29,10 @@ class RegisterController
                 $error++;
                 $_SESSION['error']['password'] = 'Le mot de passe doit contenir au moins 6 caractères.';
             }
+            if (!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                $error++;
+                $_SESSION['error']['email'] = "L'email n'est pas valide";
+            }
 
             if(trim(strlen($_POST['pseudo'])) < 3 ) {
                 $error++;
