@@ -164,7 +164,7 @@ class DashboardController
             elseif (isset($_GET['action']) && $_GET['action'] === 'deleteMembre' && isset($_GET['membreId'])) {
                 if (is_numeric($_GET['membreId'])) {
                     $membre = $this->membresManager->selectOne($_GET['membreId']);
-                    if($membre['role'] != "0") {
+                    if($membre['role'] === '1') {
                         $_SESSION['info']['membre'] = 'Les administrateurs ne peuvent être supprimés.';
                         header('Location: index.php?route=dashboard&onglet=membres');
                     }
@@ -177,7 +177,7 @@ class DashboardController
                     $_SESSION['info']['membre'] = 'Membre supprimé !';
                     header('Location: index.php?route=dashboard&onglet=membres');
                 } else {
-                    header('Location: index.php?route=dashboard&onglet=article');
+                    header('Location: index.php?route=dashboard&onglet=membres');
                 }
             }
 

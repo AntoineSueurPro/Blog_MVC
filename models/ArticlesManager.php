@@ -28,7 +28,7 @@
      }
 
      public function selectAll() {
-         $query = Model::getBdd()->query('SELECT articles.id_article as id_article, articles.image_article as image, articles.titre as titre, articles.contenu as contenu, membres.pseudo as auteur, categories.nom_categorie as categorie, articles.created_at as created_at FROM articles LEFT JOIN categories ON articles.categorie = categories.id_categorie INNER JOIN membres ON articles.id_auteur = membres.id_membre');
+         $query = Model::getBdd()->query('SELECT articles.id_article as id_article, articles.image_article as image, articles.titre as titre, articles.contenu as contenu, membres.pseudo as auteur, categories.nom_categorie as categorie, articles.created_at as created_at FROM articles LEFT JOIN categories ON articles.categorie = categories.id_categorie INNER JOIN membres ON articles.id_auteur = membres.id_membre ORDER BY articles.id_article DESC');
          $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
          return $result;

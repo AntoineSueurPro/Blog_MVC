@@ -170,9 +170,15 @@ p {
 /*==============================================================
 |              CLASSE UTILITAIRES                              |
 ==============================================================*/
-
+.height40 {
+    height: 40%;
+}
 .dashboard {
     min-height: 100vh;
+}
+
+.conteneur_article {
+    min-height: 70vh;
 }
 
 .largeur45 {
@@ -315,6 +321,11 @@ p {
 .avatar_dashboard {
     height: 75px;
     width: 75px;
+}
+
+.avatar_profil {
+    height: 250px;
+    width: 250px;
 }
 
 /*************************************************|

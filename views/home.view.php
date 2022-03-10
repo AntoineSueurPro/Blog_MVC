@@ -32,7 +32,7 @@ $created_at = implode("-", $created_at)
     </div>
 
 
-    <div id="content" class="d-flex flex-wrap justify-content-lg-between justify-content-sm-center"></div>
+    <div id="content" class="d-flex flex-wrap gap-5 conteneur_article justify-content-center justify-content-lg-start"></div>
 </section>
 <?php
 $content = ob_get_clean();

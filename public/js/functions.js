@@ -26,7 +26,7 @@ function addContent(content) {
     content['created_at'] = content['created_at'].join("-")
     myElement.className = 'animate__animated animate__fadeIn item-article'
     myElement.innerHTML +=
-        '<img  class="card-img-top round" alt="image du post" src="public/img/' + content['image'] +'"></div>' +
+        '<img  class="card-img-top height40 round" alt="image du post" src="public/img/' + content['image'] +'"></div>' +
         '<div class="mt-2">' +
             '<p class="hero-date">'+ content['created_at'] +'</p>' +
             '<h5 class="card-title"><a class="titre-md" href="index.php?route=article&articleId=' + content['id_article'] + '">' + content['titre'] + '</a></h5>' +

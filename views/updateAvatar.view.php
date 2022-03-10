@@ -11,7 +11,7 @@ ob_start();
                     <p class="text-danger text-center"><?= $error ?></p>
                 <?php }
             } ?>
-            <div class="mb-2"><img class="w-100 round" alt="avatar" src="public/img/<?= $_SESSION['membre']['avatar'] ?>"></div>
+            <div class="mb-2 text-center"><img class="avatar_profil round" alt="avatar" src="public/img/<?= $_SESSION['membre']['avatar'] ?>"></div>
             <form action="" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="MAX_SIZE_FILE" value="1000000">
                 <input class="fichierAvatar" type="file" name="avatar" required>

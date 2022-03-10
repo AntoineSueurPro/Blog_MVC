@@ -6,7 +6,7 @@ $created_at = explode("-", $article['created_at']);
 $created_at = array_reverse($created_at);
 $created_at = implode("-", $created_at)
 ?>
-    <section class="round shadow-lg p-5 container-mobile">
+    <section class="round shadow-lg p-3 container-mobile">
         <?php if (isset($_SESSION['error']['contenu'])) {
             echo '<p class="text-danger text-center">' . $_SESSION['error']['contenu'] . '</p>';
         } ?>

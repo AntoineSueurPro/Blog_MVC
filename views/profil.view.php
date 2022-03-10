@@ -13,7 +13,7 @@ if ($_SESSION['membre']['avatar'] === NULL) {
             if (isset($_SESSION['info']) && !empty($_SESSION['info'])) { ?>
                 <p class="text-center text-success"><?= $_SESSION['info'] ?></p>
             <?php } ?>
-            <div class=""><img class="w-100 round" alt="avatar" src="public/img/<?= $_SESSION['membre']['avatar'] ?>"></div>
+            <div class="text-center"><img class="avatar_profil round" alt="avatar" src="public/img/<?= $_SESSION['membre']['avatar'] ?>"></div>
             <p class="text-center fw-bold titre-md mt-1 marge-reset"><?= $_SESSION['membre']['pseudo'] ?></p>
             <p class="text-center p-xs"><?= $_SESSION['membre']['role'] === '0' ? 'Membre' : 'Admin' ?></p>
             <p class="text-center"><a class="bouton d-inline-block w-75" href="?route=profil&action=updateAvatar">Modifier son avatar</a></p>

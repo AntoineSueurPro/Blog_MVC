@@ -79,7 +79,7 @@ ob_start();
                     $i = 1;
                     foreach ($articles as $article) { ?>
                         <tr>
-                            <th><?= $i ?></th>
+                            <th><?= $article['id_article'] ?></th>
                             <td><?= $article['titre'] ?></td>
                             <td> <?= substr($article['contenu'], 0, 350) . '...' ?></td>
                             <td><?= $article['created_at'] ?></td>
