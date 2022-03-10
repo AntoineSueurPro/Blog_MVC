@@ -30,7 +30,7 @@ function addContent(content) {
         '<div class="mt-2">' +
             '<p class="hero-date">'+ content['created_at'] +'</p>' +
             '<h5 class="card-title"><a class="titre-md" href="index.php?route=article&articleId=' + content['id_article'] + '">' + content['titre'] + '</a></h5>' +
-            '<div>' + (content['categorie'] === null ? 'Sans categorie' : content['categorie']) + '</div>' +
+            '<div class="fw-bold blue">' + (content['categorie'] === null ? 'Sans categorie' : content['categorie']) + '</div>' +
             '<p class="card-text">' + content['contenu'].substr(0, 150) + '...' + '</p>' + '</p>' +
             '<a href="index.php?route=article&articleId=' + content['id_article'] + '" class="bouton">Lire l\'article</a>' +
         '</div>'

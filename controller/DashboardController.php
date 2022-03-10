@@ -128,7 +128,7 @@ class DashboardController
                                 if (move_uploaded_file($tmp_name, $folder . $file_name)) {
                                     unlink('public/img/' . $article['image']);
                                     $this->articlesManager->update($file_name, $_POST, $article['id_article']);
-                                    $_SESSION['info'] = 'Article modifié !';
+                                    $_SESSION['info']['articlemodif'] = 'Article modifié !';
                                     header('Location: index.php?route=dashboard&onglet=article');
                                 }
                             } else {

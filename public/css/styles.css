@@ -46,7 +46,7 @@ p {
 }
 
 .hero {
-    height: 55vh;
+    height: 75vh;
     border-radius: 15px;
     background-position: center;
     background-size: cover;
@@ -67,7 +67,7 @@ p {
 }
 
 .hero-p {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .hero-date {
@@ -178,7 +178,7 @@ p {
 }
 
 .conteneur_article {
-    min-height: 70vh;
+    min-height: 58vh;
 }
 
 .largeur45 {
@@ -195,6 +195,11 @@ p {
 
 .largeurPerso {
     width: 28%;
+}
+
+
+.largeurContact {
+    width: 50%;
 }
 
 .largeur90 {
@@ -331,9 +336,22 @@ p {
 /*************************************************|
 |                  RESPONSIVE                     |
 |*************************************************/
+@media only screen and (min-width: 0px) and (max-width: 300px) {
 
+    .avatar_profil {
+        height: 125px;
+        width: 125px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 650px) {
 
+    .avatar_profil {
+        height: 200px;
+        width: 200px;
+    }
+}
 @media only screen and (min-width: 0px) and (max-width: 650px){
+
 
     header {
         position: fixed;
@@ -346,6 +364,10 @@ p {
 
     header.container-perso {
         width: 100%;
+    }
+
+    .height40 {
+        height: auto;
     }
 
     .container-mobile {
@@ -384,6 +406,10 @@ p {
         width: 95%;
     }
 
+    .largeurContact {
+        width: 95%;
+    }
+
     .fichierAvatar {
         color: transparent;
     }
@@ -406,7 +432,7 @@ p {
     }
 
     .hero {
-        height: 15vh;
+        height: 25vh;
     }
 
     .hero-text {
@@ -467,6 +493,27 @@ p {
     .largeurPerso {
         width: 70%;
     }
+    .largeurContact {
+        width: 70%;
+    }
+    .hero {
+        height: 35vh;
+    }
+
+    .hero-text-content {
+        width: 60%;
+    }
+
+    .gros_h2 {
+        font-size: 30px;
+    }
+
+    .hero-text {
+        height: 18vh;
+        font-size: 18px;
+    }
+
+
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px){
@@ -486,22 +533,29 @@ p {
     .largeurPerso {
         width: 70%;
     }
+    .largeurContact {
+        width: 85%;
+    }
     .hero {
-        height: 20vh;
+        height: 30vh;
         background-position: center;
         background-size: cover;
     }
 
     .hero-text {
-        height: 10vh;
+        height: 12vh;
     }
 
     .hero .gros_h2 {
-        font-size: 15px;
+        font-size: 20px;
+    }
+
+    .hero-text-content {
+        width: 60%;
     }
 
     .hero-p {
-        display: none;
+       font-size: 12px;
     }
 }
 
@@ -515,6 +569,7 @@ p {
         flex-wrap: wrap;
         gap: unset;
     }
+
 
 
 
