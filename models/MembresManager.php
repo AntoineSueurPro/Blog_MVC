@@ -34,7 +34,10 @@ class MembresManager extends Model
     public function login($credientials)
     {
         $pseudo = $credientials['pseudo'];
-        $query = Model::getBdd()->query("SELECT * FROM membres WHERE pseudo = '{$pseudo}'");
+        $query = Model::getBdd()->prepare("SELECT * FROM membres WHERE pseudo = :pseudo");
+        $query->execute(array(
+            ':pseudo' => $pseudo
+        ));
         $result = $query->fetch(PDO::FETCH_ASSOC);
         if ($result) {
             if (password_verify($credientials['password'], $result['password'])) {
@@ -62,7 +65,10 @@ class MembresManager extends Model
     }
 
     public function updatePassword($old_password, $id, $new_password) {
-        $query = Model::getBdd()->query("SELECT password FROM membres WHERE id_membre = '{$id}'");
+        $query = Model::getBdd()->prepare("SELECT password FROM membres WHERE id_membre = :id");
+        $query->execute(array(
+            ':id'=> $id
+        ));
         $result = $query->fetch(PDO::FETCH_ASSOC);
         if(password_verify($old_password, $result['password'])) {
             $password =  password_hash($new_password, PASSWORD_BCRYPT);
@@ -99,5 +105,12 @@ class MembresManager extends Model
         ));
         $result = $query->fetch(PDO::FETCH_ASSOC);
         return $result['id_membre'];
+    }
+
+    public function getNbMembrebyDate() {
+        $query = Model::getBdd()->query('SELECT COUNT(*) as nb, membres.created_at FROM membres GROUP BY created_at ORDER BY created_at');
+        $res = $query->fetchAll(PDO::FETCH_ASSOC);
+        $res = json_encode($res, true);
+        echo $res;
     }
 }

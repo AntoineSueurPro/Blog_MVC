@@ -40,6 +40,7 @@ class ArticleController
                 if (!$article) {
                     header("Location: index.php");
                 }
+                $this->articleManager->updateViewsOnArticle($_GET['articleId']);
                 require('views/article.view.php');
 
             } else {

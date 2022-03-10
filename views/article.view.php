@@ -24,7 +24,7 @@ $created_at = implode("-", $created_at)
             </div>
             <h2 class="gros_h2 text-center mb-5 mt-5">Commentaires <span class="fw-regular">(<?= $nb_commentaires ?>)</span></h2>
             <?php
-            if($nb_commentaires === 0) {
+            if ($nb_commentaires === 0) {
                 echo '<p class="text-center">Il n\'y a aucun commentaires. Soyez le premier à commenter !</p>';
             }
             foreach ($commentaires as $commentaire) {
@@ -49,7 +49,7 @@ $created_at = implode("-", $created_at)
                     <div class="d-flex flex-column ms-3">
                         <div class="d-flex">
                             <p class="date_article">• Le <?= $commentaire['created_at'] ?></p>
-                            <?php if (isset($_SESSION['membre']) && $_SESSION['membre']['role'] === '1' || (isset($_SESSION['membre']) && $commentaire['id_membre'] === $_SESSION['membre']['id_membre'])) { ?>
+                            <?php if (isset($_SESSION['membre']) && $_SESSION['membre']['role'] === '1' || (isset($_SESSION['membre']) && $commentaire['id_membre']                                      === $_SESSION['membre']['id_membre'])) { ?>
                                 <p class="ms-3"><a class="text-danger"
                                                    href="index.php?route=article&action=deleteComment&commentId=<?= $commentaire['id_commentaire'] ?>"><i
                                                 class="far fa-trash-alt suppr"></i> Supprimer</a></p>

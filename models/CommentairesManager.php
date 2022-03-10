@@ -55,4 +55,17 @@ class CommentairesManager extends Model {
         $result = $query->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getCommentDateAjax() {
+        $query = Model::getBdd()->query('SELECT COUNT(*) as nb, commentaires.created_at FROM commentaires GROUP BY created_at ORDER BY created_at');
+        $res = $query->fetchAll(PDO::FETCH_ASSOC);
+        $res = json_encode($res, true);
+        echo $res;
+    }
+
+    public function get3LastComment() {
+        $query = Model::getBdd()->query('SELECT c.id_commentaire, m.pseudo, c.contenu, c.id_article, m.avatar FROM commentaires as c INNER JOIN membres as m ON m.id_membre = c.id_auteur ORDER BY c.id_commentaire DESC LIMIT 3');
+        $res = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+    }
 }

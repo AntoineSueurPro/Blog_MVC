@@ -25,4 +25,12 @@ class CategoriesManager extends Model {
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getNbViewPerCategories() {
+        $query = Model::getBdd()->query('SELECT SUM(vues.nb_vues) as nb, categories.nom_categorie, articles.id_article, articles.categorie FROM categories LEFT JOIN articles ON articles.categorie = categories.id_categorie LEFT JOIN vues ON vues.id_article = articles.id_article GROUP BY categories.nom_categorie ORDER BY nb DESC');
+        $res = $query->fetchAll(PDO::FETCH_ASSOC);
+        $res = json_encode($res, true);
+        echo $res;
+    }
 }
+

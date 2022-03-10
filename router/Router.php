@@ -55,6 +55,14 @@ class Router
                     $this->contactController->index();
                 } elseif ($route === 'mentions') {
                     $this->homeController->mentionLegale();
+                } elseif ($route === 'commentAjax') {
+                    $this->dashboardController->getCommentAndDates();
+                } elseif ($route === 'membresAjax') {
+                    $this->dashboardController->getMembersAndDates();
+                } elseif ($route === 'nbViewsAjax') {
+                    $this->dashboardController->getNbViews();
+                } elseif ($route === 'nbViewsCategories') {
+                    $this->dashboardController->getNbViewsPerCategories();
                 }
                 else {
                     $this->errorController->pageNotFound();

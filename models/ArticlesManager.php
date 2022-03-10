@@ -77,4 +77,40 @@
          echo $result;
      }
 
+     public function updateViewsOnArticle($id_article) {
+        $date = new \DateTime();
+        $date = $date->format('Y-m-d');
+
+        $query = Model::getBdd()->prepare('SELECT * FROM vues WHERE id_article = :id_article AND date_vues = :date_vue');
+        $query->execute([
+            'id_article' => $id_article,
+            'date_vue' => $date
+        ]);
+        $res = $query->fetch(PDO::FETCH_ASSOC);
+
+        if($res ||  ($res && count($res)> 0)) {
+            $nb = intval($res['nb_vues'], 10) +1;
+            $query = Model::getBdd()->prepare('UPDATE vues SET nb_vues = :nb WHERE id = :id');
+            $query->execute([
+                ':nb' => $nb,
+                ':id' => $res['id']
+            ]);
+        } else {
+            $query = Model::getBdd()->prepare('INSERT INTO vues (id_article, nb_vues, date_vues) VALUES (:id, :nb_vues, :date_vues)');
+            $query->execute([
+                ':id' => $id_article,
+                ':nb_vues' => 1,
+                'date_vues' => $date
+            ]);
+        }
+
+     }
+
+     public function getNbViewAndDate() {
+         $query = Model::getBdd()->query('SELECT SUM(nb_vues) as nb, date_vues FROM vues GROUP BY date_vues ORDER BY date_vues');
+         $res = $query->fetchAll(PDO::FETCH_ASSOC);
+         $res = json_encode($res, true);
+         echo $res;
+     }
+
  }

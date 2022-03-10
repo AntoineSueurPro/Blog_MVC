@@ -29,7 +29,7 @@ class DashboardController
             }
             $this->categorieManager->insert($_POST['nom_categorie']);
             $_SESSION['info']['categorieadd'] = 'Catégorie ajoutée !';
-            header('Location: index.php?route=dashboard#categorie');
+            header('Location: index.php?route=dashboard&onglet=categorie');
         }
 
 
@@ -76,7 +76,7 @@ class DashboardController
                             if (move_uploaded_file($tmp_name, $folder . $file_name)) {
                                 $this->articlesManager->insert($_POST, $_SESSION['membre']['id_membre'], $file_name);
                                 $_SESSION['info']['articleadd'] = 'Article ajouté !';
-                                header('Location: index.php?route=dashboard');
+                                header('Location: index.php?route=dashboard&onglet=article');
                             }
                         } else {
                             $_SESSION['error'] = $error;
@@ -129,7 +129,7 @@ class DashboardController
                                     unlink('public/img/' . $article['image']);
                                     $this->articlesManager->update($file_name, $_POST, $article['id_article']);
                                     $_SESSION['info'] = 'Article modifié !';
-                                    header('Location: index.php?route=dashboard');
+                                    header('Location: index.php?route=dashboard&onglet=article');
                                 }
                             } else {
                                 $_SESSION['error'] = $error;
@@ -137,7 +137,7 @@ class DashboardController
                         } else {
                             $this->articlesManager->update($article['image'], $_POST, $article['id_article']);
                             $_SESSION['info']['articlemodif'] = 'Article modifié !';
-                            header('Location: index.php?route=dashboard');
+                            header('Location: index.php?route=dashboard&onglet=article');
                         }
                     }
                     require('views/formArticle.php');
@@ -155,7 +155,7 @@ class DashboardController
                     unlink('public/img/' . $article['image']);
                     $this->articlesManager->delete($_GET['articleId']);
                     $_SESSION['info']['article'] = 'Article supprimé !';
-                    header('Location: index.php?route=dashboard');
+                    header('Location: index.php?route=dashboard&onglet=article');
 
                 } else {
                     header('Location: index.php?route=dashboard');
@@ -166,7 +166,7 @@ class DashboardController
                     $membre = $this->membresManager->selectOne($_GET['membreId']);
                     if($membre['role'] != "0") {
                         $_SESSION['info']['membre'] = 'Les administrateurs ne peuvent être supprimés.';
-                        header('Location: index.php?route=dashboard#membre');
+                        header('Location: index.php?route=dashboard&onglet=membres');
                     }
                     $this->commentairesManager->deleteAllCommentFromUser($_GET['membreId']);
 
@@ -175,9 +175,9 @@ class DashboardController
                     }
                     $this->membresManager->deleteAccount($_GET['membreId']);
                     $_SESSION['info']['membre'] = 'Membre supprimé !';
-                    header('Location: index.php?route=dashboard#membre');
+                    header('Location: index.php?route=dashboard&onglet=membres');
                 } else {
-                    header('Location: index.php?route=dashboard#membre');
+                    header('Location: index.php?route=dashboard&onglet=article');
                 }
             }
 
@@ -186,17 +186,34 @@ class DashboardController
                     $this->articlesManager->setCategorieToNull($_GET['categorieId']);
                     $this->categorieManager->deleteCategorie($_GET['categorieId']);
                     $_SESSION['info']['categorie'] = 'Catégorie supprimée !';
-                    header('Location: index.php?route=dashboard#categorie');
+                    header('Location: index.php?route=dashboard&onglet=categorie');
                 }
-                header('Location: index.php?route=dashboard#categorie');
+                header('Location: index.php?route=dashboard&onglet=categorie');
             }
 
          else {
             $categories = $this->categorieManager->selectAll();
             $membres = $this->membresManager->selectAll();
             $articles = $this->articlesManager->selectAll();
+            $lastComments = $this->commentairesManager->get3LastComment();
             require('views/dashboard.view.php');
         }
 
+    }
+
+    function getCommentAndDates() {
+            $this->commentairesManager->getCommentDateAjax();
+    }
+
+    function getMembersAndDates() {
+        $this->membresManager->getNbMembrebyDate();
+    }
+
+    public function getNbViews() {
+        $this->articlesManager->getNbViewAndDate();
+    }
+
+    public function getNbViewsPerCategories() {
+        $this->categorieManager->getNbViewPerCategories();
     }
 }

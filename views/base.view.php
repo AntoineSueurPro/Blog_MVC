@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.tiny.cloud/1/kboxiw6t58hnx5roazu5n0ykco7bd00bo7xv0su7t7t3h5sk/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <link
             rel="stylesheet"
@@ -95,10 +96,17 @@
 <footer class="w-100 text-center p-3">
     © 2022 All rights reserved | Antoine Sueur | Developpeur Web & Web Mobile | <a href="?route=mentions">Mentions légales</a>
 </footer>
+<?php if (isset($_GET['route']) && $_GET['route']  === 'dashboard') { ?>
+    <script type="text/javascript" src="public/js/dashboard-script.js"></script>
+    <script type="text/javascript" src="public/js/bundle-graph.js"></script>
+<?php } ?>
+<?php if (!isset($_GET['route'])) { ?>
     <script type="text/javascript" src="public/js/functions.js"></script>
     <script type="text/javascript" src="public/js/index_main.js"></script>
-    <script type="text/javascript" src="public/js/menu-script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<?php } ?>
+<script type="text/javascript" src="public/js/menu-script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
 </body>

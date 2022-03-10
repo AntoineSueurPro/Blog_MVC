@@ -171,9 +171,20 @@ p {
 |              CLASSE UTILITAIRES                              |
 ==============================================================*/
 
+.dashboard {
+    min-height: 100vh;
+}
+
+.largeur45 {
+    width: 45%;
+}
 
 .gros_h2 {
     font-size: 34px;
+}
+
+.largeur15 {
+    width: 15%;
 }
 
 .largeurPerso {
@@ -184,6 +195,12 @@ p {
     width: 90%;
 }
 
+.largeur80 {
+    width: 80%;
+}
+.myBackground {
+    background-color: #003459;
+}
 .bouton {
     background-color: #003459;
     color: white;
@@ -285,6 +302,19 @@ p {
         width: 100%;
     }
 
+}
+
+/*************************************************|
+|                  MENU DASHBOARD                 |
+|*************************************************/
+
+#vueEnsemble, #vueArticles, #vueCategories, #vueMembres {
+    cursor: pointer;
+}
+
+.avatar_dashboard {
+    height: 75px;
+    width: 75px;
 }
 
 /*************************************************|
