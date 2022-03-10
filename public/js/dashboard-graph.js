@@ -340,11 +340,18 @@ axios({
             plotShadow: false,
             type: 'pie'
         },
+        exporting: {
+            buttons: {
+                contextButton: {
+                    menuItems: ["viewFullscreen"],
+                },
+            },
+        },
         title: {
             text: 'Catégories les plus vues'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b><br>' +
+            pointFormat: '<b>{point.percentage:.1f}%</b><br>' +
                 'Vues : {point.info}'
         },
         accessibility: {

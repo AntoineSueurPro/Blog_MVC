@@ -20,12 +20,16 @@ ob_start();
             <div id="overview">
                 <h2 class="mb-3"><i class="far fa-chart-bar fs-2 mb-3 me-2"></i>Vue d'ensemble</h2>
                 <div class="d-flex justify-content-between flex-wrap">
+
                     <div id="graphViews" class="largeur45 border p-2"></div>
                     <div id="graphMembers" class="largeur45 border p-2"></div>
                     <div id="graphContainer" class="largeur45 border p-2 mt-5"></div>
                     <div id="" class="largeur45 p-2 mt-5">
                         <h2 class="mb-4">Derniers commentaires :</h2>
-                        <?php foreach ($lastComments as $commentaire) { ?>
+                        <?php foreach ($lastComments as $commentaire) {
+                            if ($commentaire['avatar'] === NULL) {
+                            $commentaire['avatar'] = 'avatar.jpg';
+                            } ?>
                             <div class="d-flex m-auto commentaire">
                                 <div class="d-flex flex-column">
                                     <div>
@@ -39,7 +43,7 @@ ob_start();
                                         <p class="ms-3"><a class="text-danger"
                                                            href="index.php?route=article&action=deleteComment&commentId=<?= $commentaire['id_commentaire'] ?>"><i
                                                         class="far fa-trash-alt suppr"></i> Supprimer</a></p>
-                                        <p class="ms-3"><a class="blue"
+                                        <p class="ms-3"><a class="blue" target="_blank"
                                                            href="index.php?route=article&articleId=<?= $commentaire['id_article'] ?>"><i
                                                         class="fas fa-external-link-alt"></i> Voir l'article</a></p>
 
@@ -95,18 +99,18 @@ ob_start();
             <div id="sectionCategories" class="d-none ms-5">
                 <h2 class=" mb-4" id="categorie"><i class="far fa-bookmark fs-2 mb-3 me-2"></i>Categories</h2>
                 <?= isset($_SESSION['info']['categorie']) ? '<p class="text-danger">' . $_SESSION['info']['categorie'] . '</p>' : '' ?>
-                <?= isset($_SESSION['info']['categorieadd']) ? '<p class="text-success">' . $_SESSION['info']['categorieadd'] . '</p>' : '' ?>
+                <?= isset($_SESSION['success']) ? '<p class="text-success">' . $_SESSION['success'] . '</p>' : '' ?>
                 <div class="toble">
                     <form action="" method="POST">
                         <input type="text" name="nom_categorie" id="nom_categorie">
                         <input type="submit" class="bouton" value="Ajouter">
                     </form>
-                    <table class="table w-50">
+                    <table class="table">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Catégorie</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col" class="text-center">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -116,7 +120,7 @@ ob_start();
                             <tr>
                                 <th><?= $i ?></th>
                                 <td><?= $categorie['nom_categorie'] ?></td>
-                                <td>
+                                <td class="text-center">
                                     <a class="bouton-suppr" href="?route=dashboard&action=deleteCategorie&categorieId=<?= $categorie['id_categorie'] ?>">
                                         Supprimer </a>
                                 </td>
@@ -131,7 +135,7 @@ ob_start();
             <div id="sectionMembres" class="d-none ms-5">
                 <h2 class="mb-5" id="membre"><i class="far fa-user fs-2 mb-3 me-2"></i>Membres</h2>
                 <?= isset($_SESSION['info']['membre']) ? '<p class="text-danger">' . $_SESSION['info']['membre'] . '</p>' : '' ?>
-                <table class="table largeur70">
+                <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -160,6 +164,7 @@ ob_start();
     </section>
 <?php
 unset($_SESSION['info']);
+unset($_SESSION['success']);
 $content = ob_get_clean();
 $title = 'Dahsboard';
 require('base.view.php');

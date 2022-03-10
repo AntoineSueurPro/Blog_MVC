@@ -28,8 +28,8 @@ class DashboardController
                 $_POST[$key] = htmlspecialchars($value);
             }
             $this->categorieManager->insert($_POST['nom_categorie']);
-            $_SESSION['info']['categorieadd'] = 'Catégorie ajoutée !';
-            header('Location: index.php?route=dashboard&onglet=categorie');
+            $_SESSION['success'] = 'Catégorie ajoutée !';
+
         }
 
 

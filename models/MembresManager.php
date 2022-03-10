@@ -9,7 +9,7 @@ class MembresManager extends Model
 
     public function insert($membre)
     {
-        $query = Model::getBdd()->prepare('INSERT INTO membres (pseudo, email, password) VALUES (:pseudo, :email, :password)');
+        $query = Model::getBdd()->prepare('INSERT INTO membres (pseudo, email, password, created_at) VALUES (:pseudo, :email, :password, NOW())');
         $query->execute(array(
             'pseudo' => $membre['pseudo'],
             'email' => $membre['email'],
