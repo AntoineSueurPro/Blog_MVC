@@ -28,7 +28,7 @@ Fonctionnalités :
 - Page de profil
 - Gestion d'avatar
 - Gestion de commentaires
-- Espace d'administration
+- Espace d'administration avec graphiques et statistiques
 - Interface TinyMCE
 - Ajout et modification d'image dans les articles
 - Rôles Admin et User
