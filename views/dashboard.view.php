@@ -7,7 +7,7 @@ ob_start();
         <?php if(isset($_GET['onglet'])) { ?>
             <input id="onglet" type="hidden" value="<?= $_GET['onglet'] ?>">
         <?php } ?>
-        <div id="menuDashboard" class="myBackground text-white fw-bold border p-lg-3 rounded">
+        <div id="menuDashboard" class="myBackground text-white fw-bold border p-lg-3 rounded-start">
             <h1 class="mb-5 fs-3 text-center pb-2 border-bottom d-none d-lg-block">Dashboard</h1>
             <div class="d-flex flex-lg-column pt-3 pt-lg-0 align-items-center align-items-lg-start justify-content-around">
                 <p id="vueEnsemble" class="d-lg-flex"><i class="far fa-chart-bar fs-3 mb-lg-3 me-lg-2 text-center"></i> <span class="d-none d-lg-block">Vue d'ensemble</span></p>
@@ -23,7 +23,7 @@ ob_start();
 
                     <div id="graphViews" class="largeur45 border p-2"></div>
                     <div id="graphMembers" class="largeur45 border p-2 mt-5 mt-lg-0"></div>
-                    <div id="graphContainer" class="largeur45 border p-2 mt-5"></div>
+                    <div id="graphContainer" class="largeur45 border p-2 mt-5 mb-lg-5"></div>
                     <div id="" class="largeur45 p-2 mt-5">
                         <h2 class="mb-4">Derniers commentaires :</h2>
                         <?php foreach ($lastComments as $commentaire) {
