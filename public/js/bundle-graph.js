@@ -3061,8 +3061,6 @@ axios({
 
     })
 
-    console.log(set_categories)
-
 
     categoriesChart = Highcharts.chart("graphCategories", {
         chart: {
@@ -3102,8 +3100,6 @@ axios({
         },
         series: set_categories
     });
-
-    console.log(categoriesChart.series)
 
 })
 },{"axios":2,"highcharts":32,"highcharts/modules/exporting":33}]},{},[34]);

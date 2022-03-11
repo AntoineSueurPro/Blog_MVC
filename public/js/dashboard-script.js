@@ -16,18 +16,20 @@ vueEnsemble.addEventListener('click', showOverview)
 vueCategories.addEventListener('click', showCategories)
 vueArticles.addEventListener('click', showArticles)
 
-if(onglet.value === 'membres') {
-    showMembres()
-}
 
-if(onglet.value === 'article') {
-    showArticles()
-}
+if(onglet) {
+    if (onglet.value === 'membres') {
+        showMembres()
+    }
 
-if(onglet.value === 'categorie') {
-    showCategories()
-}
+    if (onglet.value === 'article') {
+        showArticles()
+    }
 
+    if (onglet.value === 'categorie') {
+        showCategories()
+    }
+}
 
 function showArticles() {
     overview.classList.add('d-none')

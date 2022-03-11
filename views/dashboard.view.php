@@ -23,8 +23,8 @@ ob_start();
 
                     <div id="graphViews" class="largeur45 border p-2"></div>
                     <div id="graphMembers" class="largeur45 border p-2 mt-5 mt-lg-0"></div>
-                    <div id="graphContainer" class="largeur45 border p-2 mt-5 mb-lg-5"></div>
-                    <div id="" class="largeur45 p-2 mt-5">
+                    <div id="graphContainer" class="largeur45 border p-2 mt-5 mb-lg-5 pb-lg-5"></div>
+                    <div id="" class="largeur45 p-2 mt-5 pb-lg-5">
                         <h2 class="mb-4">Derniers commentaires :</h2>
                         <?php foreach ($lastComments as $commentaire) {
                             if ($commentaire['avatar'] === NULL) {
