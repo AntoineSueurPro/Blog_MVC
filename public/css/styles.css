@@ -333,6 +333,14 @@ p {
     width: 250px;
 }
 
+.dashboard-container {
+    padding: 3rem;
+}
+
+.menu_dashboard {
+    width: 100%;
+}
+
 /*************************************************|
 |                  RESPONSIVE                     |
 |*************************************************/
@@ -352,7 +360,13 @@ p {
 }
 @media only screen and (min-width: 0px) and (max-width: 650px){
 
+    .largeur45 {
+        width: 98%;
+    }
 
+    .dashboard-container {
+        padding: 0;
+    }
     header {
         position: fixed;
         top: 0%;
@@ -481,6 +495,9 @@ p {
 
 @media only screen and (min-width: 651px) and (max-width: 768px){
 
+    .largeur45 {
+        width: 98%;
+    }
     .item-categorie {
         width: 30%
     }
@@ -517,6 +534,10 @@ p {
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px){
+
+    .largeur45 {
+        width: 98%;
+    }
 
     .item-categorie {
         width: 30%;
@@ -568,6 +589,10 @@ p {
     .div_categorie {
         flex-wrap: wrap;
         gap: unset;
+    }
+
+    .menu_dashboard {
+        width: 15%;
     }
 
 
